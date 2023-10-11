@@ -1,0 +1,88 @@
+/* Styling for the employee form container */
+.container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Styling for the employee form card */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the employee form header */
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  /* Styling for the employee form title */
+  .card-header h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  /* Styling for the employee form input fields */
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Styling for the error messages */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Styling for the employee table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Styling for table rows (alternating background colors) */
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Styling for table cells on hover */
+  tbody td:hover {
+    background-color: #cce5ff;
+    cursor: pointer;
+  }
+  
+  /* Styling for the action buttons in the table */
+  .btn {
+    margin: 5px;
+  }
+  
+  /* Styling for the submit button in the form */
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

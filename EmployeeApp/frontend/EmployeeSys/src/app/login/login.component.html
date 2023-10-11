@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Login</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" formControlName="UserName" placeholder="Enter your username" [ngClass]="{'is-valid': loginForm.get('UserName').valid, 'is-invalid': loginForm.get('UserName').invalid}">
+                            <div class="error-message"
+                                *ngIf="!loginForm.get('UserName').valid && (loginForm.get('UserName').dirty || loginForm.get('UserName').touched)">
+                                <span class="text-danger" *ngIf="loginForm.get('UserName').errors.required">Username is required</span>
+                                <span class="text-danger" *ngIf="loginForm.get('UserName').errors.minlength">Username Minimum Length is {{ loginForm.get('UserName').errors.minlength?.requiredLength }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Enter your password</label>
+                            <input type="password" class="form-control" formControlName="Password" placeholder="Enter your password" [ngClass]="{'is-valid': loginForm.get('Password').valid, 'is-invalid': loginForm.get('Password').invalid}">
+                            <div class="error-message"
+                                *ngIf="!loginForm.get('Password').valid && (loginForm.get('Password').dirty || loginForm.get('Password').touched)">
+                                <span class="text-danger" *ngIf="loginForm.get('Password').errors.required">Password is required</span>
+                                <span class="text-danger" *ngIf="loginForm.get('Password').errors.minlength">Password Minimum Length is {{ loginForm.get('Password').errors.minlength?.requiredLength }}</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

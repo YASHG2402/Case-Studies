@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": 4,
+      "Fname": "Tushar",
+      "Lname": "Patil",
+      "Contact": "9786756754",
+      "Email": "tushar@email.com",
+      "Dob": "2023-09-10",
+      "Add": "Goregaon"
+    },
+    {
+      "Fname": "Pratik",
+      "Lname": "Kadam",
+      "Contact": "8675645433",
+      "Email": "Pratik@gmail.com",
+      "Dob": "2023-09-24",
+      "Add": "Bandra",
+      "id": 35
+    },
+    {
+      "id": 36,
+      "Fname": "Yash",
+      "Lname": "Gavanang",
+      "Contact": "8762381628",
+      "Email": "yash@gmail.com",
+      "Dob": "2023-09-15",
+      "Add": "Andheri"
+    },
+    {
+      "id": 37,
+      "Fname": "Pranav",
+      "Lname": "Kadam",
+      "Contact": "9821861256",
+      "Email": "pranav@gmail.com",
+      "Dob": "2023-09-15",
+      "Add": "Lalbaugh"
+    },
+    {
+      "Fname": "Abhishek",
+      "Lname": "Pillai",
+      "Contact": "8383838383",
+      "Email": "abhishek@gmail.com",
+      "Dob": "2002-04-24",
+      "Add": "Andheri",
+      "id": 38
+    }
+  ]
+}

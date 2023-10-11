@@ -1,0 +1,20 @@
+1. login 
+admin - id 
+admin - pass
+
+
+2. Home page 
+
+training details
+Dashboard where admin can add training, delete, update
+
+3. Employee
+
+Add employee data, show emp data
+
+4. Assessment
+
+Rank where admin can add, update and delete
+
+
+

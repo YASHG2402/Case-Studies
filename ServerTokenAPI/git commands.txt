@@ -1,0 +1,4 @@
+git add .
+git commit -m "message"
+git push origin your branch name
+git pull origin the branch name from where you want the code 

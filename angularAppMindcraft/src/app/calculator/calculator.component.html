@@ -1,0 +1,10 @@
+<div>
+    <input type="number" [(ngModel)]="num1" placeholder="Enter Number 1">
+    <input type="number" [(ngModel)]="num2" placeholder="Enter Number 2">
+    <button (click)="calculate()">Calculate</button>
+</div>
+
+<div *ngIf="resultAdd !== undefined && resultMultiply !== undefined">
+    <p>Addition Result: {{ resultAdd }}</p>
+    <p>Multiplication Result: {{ resultMultiply }}</p>
+</div>

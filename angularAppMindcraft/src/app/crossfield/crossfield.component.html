@@ -1,0 +1,39 @@
+<form [formGroup]="profileForm" >
+    <table>
+      <tr>
+        <th><label> First Name:</label></th>
+        <td><input  formControlName="firstName" /></td>
+      </tr>
+      <tr>
+        <th> <label> Last Name:</label></th>
+        <td><input  formControlName="lastName" /></td>
+      </tr>
+      <tr>
+        <th><label>Age:</label></th>
+        <td>
+          <input  formControlName="age" type="number" />        
+          <span *ngIf="profileForm.get('age').errors?.negativeNumber" style="color: red;">
+          Please provide a valid age
+        </span>
+        </td>
+      </tr>
+      <tr>
+        <th><label>Request room access</label></th>
+        <td>
+          <select formControlName="room">
+            <option *ngFor="let room of rooms" [value]="room.value">
+              {{ room.text }}
+            </option>
+          </select>
+         <span *ngIf="profileForm.errors?.roomOnlyWith18" style="color: red;">You cannot access this room being under 18</span>
+        </td>
+      </tr>
+      <tr>          
+        <td colspan="2" style="text-align: center;">
+          <button   [disabled]="!profileForm.valid"  >
+            Submit
+          </button>
+        </td>
+      </tr>
+    </table>
+      </form>

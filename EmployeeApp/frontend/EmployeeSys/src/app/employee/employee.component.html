@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Employee Information</h2>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="employeeForm">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first name"
+                                        formControlName="firstName" [(ngModel)]="employeeObj.Fname"
+                                        [ngClass]="{'is-valid':employeeForm.controls.firstName.valid, 'is-invalid': employeeForm.controls.firstName.invalid}">
+                                    <div class="error-message"
+                                        *ngIf="!employeeForm.get('firstName').valid && (employeeForm.get('firstName').dirty || employeeForm.get('firstName').touched)">
+                                        <span class="text-danger" *ngIf="firstName.errors.required">First Name is
+                                            required
+                                        </span>
+                                        <span class="text-danger" *ngIf="firstName.errors.minlength">First Name Minimum
+                                            Length is {{
+                                            employeeForm.get('firstName').errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="firstName.errors['pattern']">First Name must
+                                            start with uppercase
+                                            letter and contain only alphabets</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName"
+                                        placeholder="Enter last name" formControlName="lastName" [(ngModel)]="employeeObj.Lname"
+                                        [ngClass]="{'is-valid':employeeForm.controls.lastName.valid, 'is-invalid': employeeForm.controls.lastName.invalid}">
+
+                                    <div class="error-message"
+                                        *ngIf="!employeeForm.get('lastName').valid && (employeeForm.get('lastName').dirty || employeeForm.get('lastName').touched)">
+                                        <span class="text-danger" *ngIf="lastName.errors.required">Last Name is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="lastName.errors.minlength">Last Name Minimum
+                                            Length is {{
+                                            employeeForm.get('lastName').errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="lastName.errors['pattern']">Last Name must
+                                            start with uppercase
+                                            letter and contain only alphabets</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="contactNo">Contact Number</label>
+                                    <input type="text" class="form-control" name="contactNo"
+                                        placeholder="Enter contact number" formControlName="contactNo" [(ngModel)]="employeeObj.ContactNo"
+                                        [ngClass]="{'is-valid':employeeForm.controls.contactNo.valid, 'is-invalid': employeeForm.controls.contactNo.invalid}">
+
+                                    <div class="error-message"
+                                        *ngIf="!lastName.valid && (contactNo.dirty || contactNo.touched)">
+                                        <span class="text-danger" *ngIf="contactNo.errors.required">Contact No is
+                                            required
+                                        </span>
+                                        <span class="text-danger" *ngIf="contactNo.errors.minlength">Contact No must be
+                                            of length {{
+                                            contactNo.errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="contactNo.errors['pattern']">Contact No should
+                                            not contain alphabets</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter email"
+                                        formControlName="email" [(ngModel)]="employeeObj.Email"
+                                        [ngClass]="{'is-valid':employeeForm.controls.email.valid, 'is-invalid': employeeForm.controls.email.invalid}">
+                                    
+                                        <div class="error-message" *ngIf="!email.valid && (email.dirty || email.touched)">
+                                        <span class="text-danger" *ngIf="email.errors.required">Email ID is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="email.errors.email">Invalid Format</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="text" class="form-control" name="dob" formControlName="dob" [(ngModel)]="employeeObj.Dob"
+                                    [ngClass]="{'is-valid':employeeForm.controls.dob.valid, 'is-invalid': employeeForm.controls.dob.invalid}">
+                                    
+                                    <div class="=error-message" *ngIf="!dob.valid && (dob.dirty || dob.touched)">
+                                        <span class="text-danger" *ngIf="dob.errors.required">DOB is required</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="address">Address</label>
+                                    <textarea class="form-control" name="address" rows="3"
+                                        placeholder="Enter address" formControlName="address" [(ngModel)]="employeeObj.Address"></textarea>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="id">Id</label>
+                                    <input type="text" class="form-control" formControlName="id" [(ngModel)]="employeeObj.id"
+                                    [ngClass]="{'is-valid': employeeForm.controls.id.valid, 'is-invalid': employeeForm.controls.id.invalid}" >
+                                    <div>
+                                        <span *ngIf="!id?.valid&&(id?.dirty||id?.touched)" class="text-danger">
+                                            <span *ngIf="id.errors.required">
+                                                Id is required
+                                    
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!employeeForm.valid" (click)="onSubmit()">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Angular Table -->
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact No</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of employeeList">
+                <td>{{ emp.Fname }}</td>
+                <td>{{ emp.Lname }}</td>
+                <td>{{ emp.ContactNo }}</td>
+                <td>{{ emp.Email }}</td>
+                <td>{{ emp.Dob }}</td>
+                <td>{{ emp.Address }}</td>
+                
+                <td>
+                    <!-- <button type="submit" class="btn btn-primary btn-block" (click)="select(emp)">Select</button>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="updateEmployee()">Update</button>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="deleteEmployeeById(emp.id)">Delete</button> -->
+                    <!-- Select button with an icon -->
+<button type="button" class="btn btn-primary" (click)="select(emp)">
+    <i class="fas fa-eye"></i> 
+  </button>
+  
+  <!-- Update button with an icon -->
+  <button type="button" class="btn btn-primary" (click)="updateEmployee()">
+    <i class="fas fa-edit"></i>
+  </button>
+  
+  <!-- Delete button with an icon -->
+  <button type="button" class="btn btn-danger" (click)="deleteEmployeeById(emp.id)">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+</body>
+
+</html>

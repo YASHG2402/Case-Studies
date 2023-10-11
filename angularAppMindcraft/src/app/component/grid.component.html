@@ -1,0 +1,19 @@
+<div style="font-weight: bolder; color: brown;">
+Title : {{gridTitle}} 
+</div>
+
+<table class="table table-bordered border-info" style="width: 50%;">
+<tr>
+    <th *ngFor="let colname of gridColumns">
+        {{colname}}
+    </th>
+</tr>
+<tr *ngFor="let row of gridData;">
+    <td *ngFor="let col of gridColumns">
+        {{row[col]}}
+    </td>
+    <td>
+        <button (click) = "SelectedRecord(row)">Select</button>
+    </td>
+</tr>
+</table>

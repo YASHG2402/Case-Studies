@@ -1,0 +1,38 @@
+<h2 style="text-align: center; color: blue;">Welcome to Angular App</h2>
+
+<div style="text-align: center;">
+    <a [routerLink]="['home']">Home</a>&nbsp; &nbsp; <!-- routerLink will not refresh the page rather than href-->
+    <a [routerLink]="['login']">Login</a>&nbsp;&nbsp;
+    <a [routerLink] ="['customer']">Customer</a>&nbsp;&nbsp;
+    <a [routerLink]="['product']">Product</a>&nbsp;&nbsp;
+    <a [routerLink]="['contact']">Contact</a>&nbsp;&nbsp;
+    <a [routerLink]="['crossfield']">CrossField</a>&nbsp;&nbsp;
+    <a [routerLink]="['formarray']">DynamicFormArrayDemo</a>&nbsp;&nbsp;
+</div>
+
+<h2 style="text-align: center;">Angular Material Demo</h2>
+<mat-slide-toggle>Toggle me</mat-slide-toggle>
+<!-- <h4>string interpolation</h4>
+
+{{title}}
+<br>
+{{count}}
+
+<hr>
+<home-ui>
+
+</home-ui> -->
+
+<!-- <app-customer></app-customer>
+<app-product></app-product> -->
+<br><br>
+<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+</div>
+
+
+<br><br><br>
+<footer>
+    <hr>
+    <div style="text-align: center; color: blue;">Designed by Yash</div>
+</footer>

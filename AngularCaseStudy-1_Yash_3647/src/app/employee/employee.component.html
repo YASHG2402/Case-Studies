@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5" [formGroup]="employeeForm">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Employee Information</h2>
+                    </div>
+                    <!-- <div class="card-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first name"
+                                        formControlName="firstName" [(ngModel)]="employeeObj.Fname"
+                                        [ngClass]="{'is-valid':employeeForm.controls.firstName.valid, 'is-invalid': employeeForm.controls.firstName.invalid}">
+                                    <div class="error-message"
+                                        *ngIf="!firstName?.valid && (firstName?.dirty || firstName?.touched)">
+                                        <span class="text-danger" *ngIf="firstName.errors.required">First Name is
+                                            required
+                                        </span>
+                                        <span class="text-danger" *ngIf="firstName.errors.minlength">First Name Minimum
+                                            Length is {{
+                                            firstName.errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="firstName.errors['pattern']">First Name must
+                                            start with uppercase
+                                            letter and contain only alphabets</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName"
+                                        placeholder="Enter last name" formControlName="lastName" [(ngModel)]="employeeObj.Lname"
+                                        [ngClass]="{'is-valid':employeeForm.controls.lastName.valid, 'is-invalid': employeeForm.controls.lastName.invalid}">
+
+                                    <div class="error-message"
+                                        *ngIf="!lastName.valid && (lastName.dirty || lastName.touched)">
+                                        <span class="text-danger" *ngIf="lastName.errors.required">Last Name is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="lastName.errors.minlength">Last Name Minimum
+                                            Length is {{
+                                            lastName.errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="lastName.errors['pattern']">Last Name must
+                                            start with uppercase
+                                            letter and contain only alphabets</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="contactNo">Contact Number</label>
+                                    <input type="text" class="form-control" name="contactNo"
+                                        placeholder="Enter contact number" formControlName="contactNo" [(ngModel)]="employeeObj.Contact"
+                                        [ngClass]="{'is-valid':employeeForm.controls.contactNo.valid, 'is-invalid': employeeForm.controls.contactNo.invalid}">
+
+                                    <div class="error-message"
+                                        *ngIf="!lastName.valid && (contactNo.dirty || contactNo.touched)">
+                                        <span class="text-danger" *ngIf="contactNo.errors.required">Contact No is
+                                            required
+                                        </span>
+                                        <span class="text-danger" *ngIf="contactNo.errors.minlength">Contact No must be
+                                            of length {{
+                                            contactNo.errors.minlength?.requiredLength }}
+                                        </span>
+                                        <span class="text-danger" *ngIf="contactNo.errors['pattern']">Contact No should
+                                            not contain alphabets</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter email"
+                                        formControlName="email" [(ngModel)]="employeeObj.Email"
+                                        [ngClass]="{'is-valid':employeeForm.controls.email.valid, 'is-invalid': employeeForm.controls.email.invalid}">
+                                    
+                                        <div class="=error-message" *ngIf="!email.valid && (email.dirty || email.touched)">
+                                        <span class="text-danger" *ngIf="email.errors.required">Email ID is required
+                                        </span>
+                                        <span class="text-danger" *ngIf="email.errors.email">Invalid Format</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" class="form-control" name="dob" formControlName="dob" [(ngModel)]="employeeObj.Dob"
+                                    [ngClass]="{'is-valid':employeeForm.controls.dob.valid, 'is-invalid': employeeForm.controls.dob.invalid}">
+                                    
+                                    <div class="=error-message" *ngIf="!dob.valid && (dob.dirty || dob.touched)">
+                                        <span class="text-danger" *ngIf="dob.errors.required">Email ID is required</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="address">Address</label>
+                                    <textarea class="form-control" name="address" rows="3"
+                                        placeholder="Enter address" formControlName="address" [(ngModel)]="employeeObj.Add"></textarea>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="id">Id</label>
+                                    <input type="text" class="form-control" formControlName="id" [(ngModel)]="employeeObj.id"
+                                    [ngClass]="{'is-valid': employeeForm.controls.id.valid, 'is-invalid': employeeForm.controls.id.invalid}">
+                                    <div>
+                                        <span *ngIf="!id?.valid&&(id?.dirty||id?.touched)" class="text-danger">
+                                            <span *ngIf="id.errors.required">
+                                                DOB is required
+                                    
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!employeeForm.valid" (click) = "onSubmit()">Submit</button>
+                        </form>
+
+                        
+                    </div> -->
+                    <!-- Update your HTML template -->
+<div class="card-body">
+    <form [formGroup]="employeeForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" [(ngModel)]="employeeObj.Fname">
+            <mat-error *ngIf="employeeForm.get('firstName').hasError('required')">First Name is required</mat-error>
+            <mat-error *ngIf="employeeForm.get('firstName').hasError('minlength')">First Name Minimum Length is {{ employeeForm.get('firstName').getError('minlength').requiredLength }}</mat-error>
+            <mat-error *ngIf="employeeForm.get('firstName').hasError('pattern')">First Name must start with an uppercase letter and contain only alphabets</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" [(ngModel)]="employeeObj.Lname">
+            <mat-error *ngIf="employeeForm.get('lastName').hasError('required')">Last Name is required</mat-error>
+            <mat-error *ngIf="employeeForm.get('lastName').hasError('minlength')">Last Name Minimum Length is {{ employeeForm.get('lastName').getError('minlength').requiredLength }}</mat-error>
+            <mat-error *ngIf="employeeForm.get('lastName').hasError('pattern')">Last Name must start with an uppercase letter and contain only alphabets</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input matInput formControlName="contactNo" [(ngModel)]="employeeObj.Contact">
+            <mat-error *ngIf="employeeForm.get('contactNo').hasError('required')">Contact No is required</mat-error>
+            <mat-error *ngIf="employeeForm.get('contactNo').hasError('minlength')">Contact No must be of length {{ employeeForm.get('contactNo').getError('minlength').requiredLength }}</mat-error>
+            <mat-error *ngIf="employeeForm.get('contactNo').hasError('pattern')">Contact No should not contain alphabets</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" [(ngModel)]="employeeObj.Email">
+            <mat-error *ngIf="employeeForm.get('email').hasError('required')">Email ID is required</mat-error>
+            <mat-error *ngIf="employeeForm.get('email').hasError('email')">Invalid Format</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput type="date" formControlName="dob" [(ngModel)]="employeeObj.Dob">
+            <mat-error *ngIf="employeeForm.get('dob').hasError('required')">Date of Birth is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address" [(ngModel)]="employeeObj.Add" rows="3"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput formControlName="id" [(ngModel)]="employeeObj.id">
+            <mat-error *ngIf="employeeForm.get('id').hasError('required')">Id is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid" (click)="onSubmit()">Submit</button>
+    </form>
+  </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <table class="table table-bordered border-primary" style="width: 600px;">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of employees">
+                <td>{{item.Fname}}</td>
+                <td>{{item.Contact}}</td>
+                <td>{{item.Email}}</td>
+                <td>{{item.Dob}}</td>
+                <td>{{item.Add}}</td>
+                <td>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="select(item)">Select</button>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="updateToServer()">Update</button>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="deleteFromServer()">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    <!-- Update your HTML template -->
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="employees">
+      <ng-container matColumnDef="fullName">
+        <mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.Fname }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="contact">
+        <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.Contact }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.Email }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dob">
+        <mat-header-cell *matHeaderCellDef> DOB </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.Dob }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.Add }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <button mat-button (click)="select(item)">Select</button>
+          <button mat-button (click)="updateToServer()">Update</button>
+          <button mat-button (click)="deleteFromServer()">Delete</button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['fullName', 'contact', 'email', 'dob', 'address', 'actions']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['fullName', 'contact', 'email', 'dob', 'address', 'actions'];"></mat-row>
+    </mat-table>
+  </div>
+  
+</body>
+</html>
+
+
+  

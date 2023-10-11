@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Style the card */
+  .card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the form fields */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Style error messages */
+  mat-error {
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* Center the card title */
+  .card-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }

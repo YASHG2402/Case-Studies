@@ -1,0 +1,24 @@
+{
+  "customers": [
+    {
+      "id": 5001,
+      "CustomerName": "Yash",
+      "Amount": "5100"
+    },
+    {
+      "id": 5002,
+      "CustomerName": "Pavan",
+      "Amount": "5200"
+    },
+    {
+      "id": "5004",
+      "CustomerName": "Raj",
+      "Amount": "5400"
+    },
+    {
+      "id": "5005",
+      "CustomerName": "Rajshri",
+      "Amount": "5500"
+    }
+  ]
+}

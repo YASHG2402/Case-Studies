@@ -1,0 +1,161 @@
+
+<div >  
+    <div >
+      <h3>Family Info</h3>
+    </div>   
+            <form [formGroup]="myForm" >            
+                <div >
+                  <label>First Name</label>
+                  <input type="text" formControlName="first_name"  />
+                  <span
+                    *ngFor="let validation of validation_message.first_name" >
+                    <span style="color: red;"
+                      *ngIf="
+                        myForm.get('first_name').hasError(validation.type) &&
+                        (myForm.get('first_name').dirty ||
+                          myForm.get('first_name').touched)"  >
+                      {{ validation.message }}
+                    </span>
+                  </span>
+                </div>
+               
+                <div >
+                  <label>Last Name</label>
+                  <input type="text" formControlName="last_name" />
+                  <span
+                    *ngFor="let validation of validation_message.last_name" >
+                    <span style="color: red;"
+                      *ngIf="
+                        myForm.get('last_name').hasError(validation.type) &&
+                        (myForm.get('last_name').dirty ||
+                          myForm.get('last_name').touched)"  >
+                      {{ validation.message }}
+                    </span>
+                  </span>
+                </div>
+
+                <div >
+                  <label>Email</label>
+                  <input type="text" formControlName="email" />
+                  <span style="color: red;"
+                    *ngFor="let validation of validation_message.email" >
+                    <span
+                      *ngIf="
+                        myForm.get('email').hasError(validation.type) &&
+                        (myForm.get('email').dirty ||
+                          myForm.get('email').touched)" >
+                      {{ validation.message }}
+                    </span>
+                  </span>
+                </div>
+
+                <div >
+                  <label>Phone No</label>
+                  <input type="text" formControlName="phone_no" maxlength="10"
+                  />
+                  <span  style="color: red;"
+                    *ngFor="let validation of validation_message.phone_no" >
+                    <span *ngIf="
+                        myForm.get('phone_no').hasError(validation.type) &&
+                        (myForm.get('phone_no').dirty ||
+                          myForm.get('phone_no').touched)" >
+                      {{ validation.message }}
+                    </span>
+                  </span>
+                </div>
+
+              <hr />
+              <div >
+                <h3>Education Details</h3>
+                <div id="education" >
+                  <table formArrayName="educationdata">
+                    <tr>
+                      <th >Add More Data:</th>
+                      <th >
+                        <button type="button" (click)="addeducationdata()" >
+                          Add More
+                        </button>
+                      </th>
+                    </tr>
+                    <tr
+                      *ngFor="let f of educationdata().controls; let i = index"
+                      [formGroupName]="i"
+                    >
+                      <td>
+                        School/College Name :
+                        <input type="text" formControlName="schoolName" />
+                        <div style="color: red;"*ngFor="
+                          let validation of validation_edumessage.schoolName" >
+                          <div style="color: red;" *ngIf="
+                              educationcon(i).controls['schoolName'].hasError(
+                                validation.type
+                              ) &&
+                              (educationcon(i).controls['schoolName'].dirty ||
+                                educationcon(i).controls['schoolName'].touched)
+                            ">
+                            {{ validation.message }}
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        Degree:
+                        <select formControlName="degree">
+                          <option value="">Select Degree</option>
+                          <option value="SCHOOL">School Degree</option>
+                          <option value="BACHELOR">Bachelor Degree</option>
+                          <option value="MASTER">Master Degree</option>
+                          <option value="PHD">PhD Degree</option>
+                        </select>
+
+                        <div style="color: red;" *ngFor="
+                            let validation of validation_edumessage.degree" >
+                          <div  style="color: red;" *ngIf="
+                              educationcon(i).controls['degree'].hasError(
+                                validation.type
+                              ) &&
+                              (educationcon(i).controls['degree'].dirty ||
+                                educationcon(i).controls['degree'].touched)
+                            ">
+                            {{ validation.message }}
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        Field Of Study:
+                        <input type="text"  formControlName="fieldofstudy" />
+                      </td>
+                      <td>
+                        Start Date:
+                        <input type="date" formControlName="startDt"  />
+                      </td>
+                      <td>
+                        End Date:
+                        <input type="date" formControlName="endDt" />
+                      </td>
+                      <td>
+                        Grade:
+                        <input type="text" formControlName="grade" />
+                      </td>
+                      <td>
+                        <button (click)="removeeducationdata(i)" >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <hr />
+              <div >
+                <button  [disabled]="!myForm.valid"  (click)="onSubmit()" >
+                  Save
+                </button>
+              </div>
+            </form>
+      
+</div>
+
+
+
+
